@@ -1,34 +1,9 @@
-# Tugas6cms | Studi Independen GITS ID
+TUGAS PROJECT KELOMPOK 2 STUDIINDEPENDENT GITS
 
-## :woman: Creator
-Name: ``` SAFNA AULIA SALSABILA ```
+NAMA KELOMPOK
+1. M. ZAINI ILHAM (lider)
+2. LUKMAN YAHYA
+3. Safna Aulia
+4. Heru Setiawan
+5. Ady Putra
 
-Campus: ``` UNIVERSITAS PUTRA BANGSA ```
-
-## :open_book: How to run
-1. Clone this repository
-```
-git clone https://github.com/safnaaulia/Tugas6-CMS.git
-```
-2. Install dependencies
-```
-composer install
-```
-3. Migrate the tables
-```
-php artisan migrate
-```
-5. Start the server
-```
-php artisan serve
-```
-
-6. Register 
-```
-http://localhost:8000/register
-```
-
-7. Login
-```
-http://localhost:8000/login
-```
