@@ -39,7 +39,7 @@
           </div>
           <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
           <small class="d-block text-center mt-3">Belum Registrasi?? <a href="/register">Registrasi sekarang yuuk!</a></small>
-          <p class="mt-5 mb-3 text-body-secondary">by : @sfnauliasal_</p>
+          <p class="mt-5 mb-3 text-body-secondary">by : @kelompok 2</p>
           <p class="mt-3 mb-3 text-body-secondary">&copy;2023</p>
         </form>
 
