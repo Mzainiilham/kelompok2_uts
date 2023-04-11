@@ -31,7 +31,7 @@
               @csrf
               <button class="btn btn-danger">Delete</button>
             </form>
-            {{-- <a href="{{ url('dashboard/product/'.$item->id) }}"class="btn btn-danger">Delete</a> --}}
+        
             
           </div>
         </div>
