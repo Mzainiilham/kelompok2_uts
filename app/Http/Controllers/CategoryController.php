@@ -49,7 +49,7 @@ class CategoryController extends Controller
         ]);
 
         return redirect('/dashboard/category');
-        
+
         // $table = $request->all();
         // Category::create($table);
         // return redirect('/dashboard/category');
@@ -103,9 +103,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $data = category::find($id); 
+        $data = category::find($id);
             $data->delete();
-            
+
             return redirect('/dashboard/category');
     }
 }
