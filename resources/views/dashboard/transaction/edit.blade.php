@@ -14,7 +14,7 @@
       <input name='total' type="text" class="form-control" id="exampleInputEmail1" placeholder="total" value="{{ $dataTransaction->total }}">
     </div>
    
-    <button type="submit" class="btn btn-primary mt-3">Edit Sekarang</button>
+    <button type="submit" name="submit" value="simpan" class="btn btn-primary mt-3">Edit Sekarang</button>
   </form>
 
   @endsection
