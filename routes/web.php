@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardCartController;
+use App\Models\Cart;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,10 @@ Route::resource('/dashboard/category', CategoryController::class)->middleware('a
 
 
 
-Route::resource('/dashboard/cart', DashboardCartController::class)->middleware('auth');
+Route::get('/cart', []);
+
+Route::get('/cart', function () {
+    return view('cart.index', [
+        'carts' => Cart::all(),
+    ]);
+});
