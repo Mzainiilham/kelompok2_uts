@@ -25,6 +25,12 @@
             Carts
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/transaction') ? 'active' : '' }}" href="/dashboard/transaction">
+            <span data-feather="shopping-cart" class="align-text-bottom"></span>
+            Transaction
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

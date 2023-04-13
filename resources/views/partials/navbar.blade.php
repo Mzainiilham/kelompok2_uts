@@ -1,10 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="#">Kelompok 2</a>
+      <a class="navbar-brand" href="#">Odeyo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+        {{-- <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link {{ ($title === "Home") ? 'active' : ''}}" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ ($title === "category") ? 'active' : ''}}" href="/category">Category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ ($title === "product") ? 'active' : ''}}" href="/product">Product</a>
+          </li>
+        </ul> --}}
 
         <ul class="navbar-nav ms-auto">
               @auth

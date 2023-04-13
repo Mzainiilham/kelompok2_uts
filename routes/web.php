@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardCartController;
 use App\Models\Cart;
 
@@ -37,6 +38,12 @@ Route::get('/product', function () {
     ]);
 });
 
+Route::get('/transaction', function () {
+    return view('transaction', [
+        "title" => "transaction"
+    ]);
+});
+
 
 // Route::get('/blog', function () {
 //     return view('post');
@@ -55,6 +62,7 @@ Route::get('/dashboard', function(){
 
 Route::resource('/dashboard/product', DashboardProductController::class)->middleware('auth');
 Route::resource('/dashboard/category', CategoryController::class)->middleware('auth');
+Route::resource('/dashboard/transaction', TransactionController::class)->middleware('auth');
 
 
 
