@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\UserController;
+
 
 class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register.index', [
+        return view('register', [
             'title' => 'Register'
         ]);
     }
@@ -33,6 +36,20 @@ class RegisterController extends Controller
         // $request->session()->flash('success', 'Registrasi Berhasil! Silahkan login');
        
         return redirect('/login')->with('success', 'Reistrasi Berhasil! Silahkan Login');
+    }
+    public function actionregister(Request $request)
+    {
+        $user = User::create([
+            'name'=> $request->name,
+            'username' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+            'active' => 1
+        ]);
+
+        Session::flash('message', 'Register Berhasil');
+        return redirect('register');
     }
 
    
