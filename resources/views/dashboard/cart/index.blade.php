@@ -1,41 +1,25 @@
+@extends('app')
 
-@extends('dashboard.layouts.main')
+@section('title', 'Cart | Index')
 
-@section('container')
-    
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Keranjang</h1>
-</div>
+@section('content')
+    <div class="d-flex row gap-4 justify-content-center">
+        @foreach ($carts as $cart)
+        <div class="col-3 mt-2 mb-1">
+            <div class="card" style="min-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> Nama Produk : {{ $cart->product->name }} </h5>
+                    <p class="card-text my-1"> Kategori Produk : {{$cart->product->name}}</p>
+                    <p class="card-text text-muted my-1">{{$cart->product->price}}</p>
+                    <p class="card-text text-muted my-1"> Kuantitas Produk : {{$cart->qty}}</p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Deskripsi</h5>
+                    <p class="card-text">{{ $cart->product->description }}</p>
+                </div>
+        </div>
+    </div>
+    @endforeach
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">No</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Harga</th>
-            <th scope="col">Jumlah</th>
-            <th scope="col">Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>sate ambal</td>
-            <td>30.000</td>
-            <td>
-                <input type="number">
-            </td>
-            <td>
-                <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
-                <button class="btn btn-succes">Cekout</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<hr>
-<p>Total : <span>0</span></p>
-</div>
-</body>
-
+  </div>
 @endsection
