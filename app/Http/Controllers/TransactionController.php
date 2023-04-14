@@ -19,7 +19,7 @@ class TransactionController extends Controller
     {
         return view('dashboard.transaction.create');
     }
-    public function store(Request $request, $users)
+    public function store(Request $request)
     {
         
         // dd($request);
