@@ -26,7 +26,7 @@ class TransactionController extends Controller
         Transaction::create([
             
             'customer_name' => $request->customer_name,
-            'user_id' => $request->user_id,
+            
             'total' => $request->total,
             
         ]);
