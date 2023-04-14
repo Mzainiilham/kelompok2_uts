@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     use HasFactory;
+   
     protected $fillable = [
-        "customer_name",
-        "total",
+        'customer_name',
+        'total',
+        'user_id',
        
     ];
     public function transaction_detail()

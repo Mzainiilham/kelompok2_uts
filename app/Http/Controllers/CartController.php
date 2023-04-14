@@ -14,7 +14,10 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        $table = Cart::get();
+        return view('dashboard.cart.index',[
+            'carts' => $table
+        ]);
     }
 
     /**
@@ -35,7 +38,10 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Cart::create([
+            'qty' => 1
+        ]);
+        return redirect('/cart');
     }
 
     /**

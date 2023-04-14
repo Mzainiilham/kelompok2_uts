@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
-
+use App\Models\User;
 class TransactionController extends Controller
 {
     //
@@ -19,12 +19,14 @@ class TransactionController extends Controller
     {
         return view('dashboard.transaction.create');
     }
-    public function store(Request $request)
+    public function store(Request $request, $users)
     {
         
         // dd($request);
         Transaction::create([
+            
             'customer_name' => $request->customer_name,
+            'user_id' => $request->user_id,
             'total' => $request->total,
             
         ]);
@@ -46,8 +48,10 @@ class TransactionController extends Controller
                 'total' => 'required',
             ]);
             Transaction::find($id)->update($validated);
-            return redirect('/dashboard/transaction');
+            return redirect('transaction');
         }
+
+        
 
         public function destroy($id)
     {
