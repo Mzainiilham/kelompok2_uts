@@ -12,7 +12,10 @@
         <label for="exampleInputEmail1" class="form-label">Total</label>
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="total">
       </div>
-    
+        <div class="mt-3">
+        <label for="exampleInputEmail1" class="form-label">User ID</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="user_id">
+      </div>
      
       
       
