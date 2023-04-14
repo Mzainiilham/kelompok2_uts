@@ -69,7 +69,7 @@ Route::resource('/dashboard/transaction', TransactionController::class)->middlew
 Route::get('/cart', []);
 
 Route::get('/cart', function () {
-    return view('cart.index', [
+    return view('dashboard.cart.index', [
         'carts' => Cart::all(),
     ]);
 });
