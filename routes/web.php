@@ -44,6 +44,12 @@ Route::get('/transaction', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return view('about', [
+        "title" => "about"
+    ]);
+});
+
 
 // Route::get('/blog', function () {
 //     return view('post');
@@ -63,6 +69,7 @@ Route::get('/dashboard', function(){
 Route::resource('/dashboard/product', DashboardProductController::class)->middleware('auth');
 Route::resource('/dashboard/category', CategoryController::class)->middleware('auth');
 Route::resource('/dashboard/transaction', TransactionController::class)->middleware('auth');
+Route::resource('/dashboard/about', AboutController::class);
 
 
 

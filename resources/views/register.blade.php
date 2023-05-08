@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 <div class="container"><br>
         <div class="col-md-6 col-md-offset-3">
-            <h2 class="text-center">FORM REGISTER</h3>
+            <h2 class="text-center">FORM REGISTER</h2>
             <hr>
             @if(session('message'))
             <div class="alert alert-success">
