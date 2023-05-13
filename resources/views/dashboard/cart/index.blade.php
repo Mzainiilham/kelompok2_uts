@@ -1,4 +1,4 @@
-@extends('app')
+@extends('dashboard.layouts.main')
 
 @section('title', 'Cart | Index')
 

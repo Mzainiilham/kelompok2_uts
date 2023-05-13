@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardCartController;
-use App\Models\Cart;
+// use App\Models\Cart;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,35 +26,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/category', function () {
-    return view('category', [
-        "title" => "category"
-    ]);
-});
-
-Route::get('/product', function () {
-    return view('product', [
-        "title" => "product"
-    ]);
-});
-
-Route::get('/transaction', function () {
-    return view('transaction', [
-        "title" => "transaction"
-    ]);
-});
-
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "about"
-    ]);
-});
-
-
-// Route::get('/blog', function () {
-//     return view('post');
-// });
-
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('guest');
 Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
@@ -69,14 +40,7 @@ Route::get('/dashboard', function(){
 Route::resource('/dashboard/product', DashboardProductController::class)->middleware('auth');
 Route::resource('/dashboard/category', CategoryController::class)->middleware('auth');
 Route::resource('/dashboard/transaction', TransactionController::class)->middleware('auth');
-Route::resource('/dashboard/about', AboutController::class);
+// Route::resource('/dashboard/about', AboutController::class);
+Route::resource('/dashboard/cart', DashboardCartController::class)->middleware('auth');
 
 
-
-Route::get('/cart', []);
-
-Route::get('/cart', function () {
-    return view('dashboard.cart.index', [
-        'carts' => Cart::all(),
-    ]);
-});
