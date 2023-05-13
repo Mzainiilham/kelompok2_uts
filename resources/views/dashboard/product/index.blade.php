@@ -30,6 +30,7 @@
               @method('DELETE')
               @csrf
               <button class="btn btn-danger">Delete</button>
+              <a href="{{ url('dashboard/cart/'.$item->id.'/index') }}" class="btn btn-primary">Cart</a>
             </form>
         
             
