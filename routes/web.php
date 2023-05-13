@@ -42,5 +42,6 @@ Route::resource('/dashboard/category', CategoryController::class)->middleware('a
 Route::resource('/dashboard/transaction', TransactionController::class)->middleware('auth');
 // Route::resource('/dashboard/about', AboutController::class);
 Route::resource('/dashboard/cart', DashboardCartController::class)->middleware('auth');
+Route::post('/dashboard/order', [DashboardProductController::class, 'order'])->middleware('auth');
 
 

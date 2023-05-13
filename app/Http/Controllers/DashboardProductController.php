@@ -117,4 +117,9 @@ class DashboardProductController extends Controller
             
             return redirect('/dashboard/product');
     }
+
+    public function order(Request $request)
+    {
+        
+    }
 }

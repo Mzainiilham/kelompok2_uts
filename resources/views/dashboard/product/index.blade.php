@@ -29,9 +29,13 @@
             <form action="{{ url('/dashboard/product/'.$item->id) }}" method="post">
               @method('DELETE')
               @csrf
-              <button class="btn btn-danger">Delete</button>
-              <a href="{{ url('dashboard/cart/'.$item->id.'/index') }}" class="btn btn-primary">Cart</a>
+              <button class="btn btn-danger my-2">Delete</button>
             </form>
+            <form action="{{ url('/dashboard/cart/') }}" method="post">
+              @csrf
+              <button class="btn btn-primary my-2">add to Cart</button>
+            </form>
+          
         
             
           </div>
