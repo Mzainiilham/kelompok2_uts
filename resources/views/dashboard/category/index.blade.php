@@ -26,7 +26,7 @@
               <tr>
                 <th scope="row">{{$item->id}}</th>
                 <td>{{$item->name}}</td>
-                <td>{{ asset('storage/'.$item->image) }}</td>
+                <td><img src="{{ asset('storage/'.$item->image) }}" alt=""></td>
                 <td>{{ $item->description }}</td>
                 <td>
                     <div class="row">
