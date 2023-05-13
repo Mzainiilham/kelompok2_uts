@@ -30,10 +30,10 @@
                 <td>{{ $item->description }}</td>
                 <td>
                     <div class="row">
-                        <div class="col-sm-1">
+                        <div class="col-sm-5">
                             <a href="/dashboard/category/{{ $item->id }}/edit" class="btn btn-primary">Edit</a>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-5">
                             <form action="{{ url('/dashboard/category/'.$item->id) }}" method="post">
                               @method('DELETE')
                               @csrf
