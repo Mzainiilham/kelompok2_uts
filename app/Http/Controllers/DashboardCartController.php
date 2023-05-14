@@ -14,7 +14,7 @@ class DashboardCartController extends Controller
      */
     public function index()
     {
-        $table = Cart::get();
+        $table = Cart::all();
         return view('dashboard.cart.index',[
             'carts' => $table
         ]);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -120,6 +121,28 @@ class DashboardProductController extends Controller
 
     public function order(Request $request)
     {
+        $data = $request->all();
+        $subtotal = 0;
+        $subtotal += $data["qty"] * $data["price"];
+        $data["subtotal"] = $subtotal ;
+
+        $cart=Cart::where('product_id',$data["product_id"])->first();
         
+        //klo udh ada id produk di keranjang, update qty&subtotal
+        if($cart){
+            $cart->qty+=$data["qty"];
+            $cart->subtotal+=$data["subtotal"];
+        }else{
+            $cart=new Cart;
+            $cart->product_id = $data["product_id"];
+            $cart->qty = $data["qty"];
+            $cart->subtotal = $data["subtotal"];
+        }
+        //klo blm ada baru nambah data
+        
+
+        $cart->save();
+
+        return redirect('/dashboard/cart');
     }
 }
