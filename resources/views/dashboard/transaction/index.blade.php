@@ -7,6 +7,7 @@
 </div>
 
 <body>
+
     <div class="row my-3">
         <table class="table table-bordered table-striped mx-6">
             <thead class="table-dark">
@@ -16,10 +17,25 @@
                 <th scope="col">Harga</th>
                 <th scope="col">Kuantitas</th>
                 <th scope="col">Subtotal</th>
-                <th scope="col">Aksi</th>
+                
+                
               </tr>
             </thead>
+            <tbody>
+             
+            
+             @foreach ($dataTransaction as $item)
+              <tr>
+                <th scope="row">{{$item->id}}</th>
+                <td>{{ $item->product_name }}</td>
+                <td>{{ $item->price }}</td>
+                <td>{{ $item->qty }}</td>
+                <td>{{ $item->subtotal }}</td>
+                
+                </tr>
       </div>
+      @endforeach
+      </tbody>
 </body>
 
 

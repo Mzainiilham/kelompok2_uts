@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('transaction', function (Blueprint $table) {
+        Schema::table('transactions', function (Blueprint $table) {
             $table->foreignId('users_id')->after('id');
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
         });

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Http\Controllers\Cart;
+use Illuminate\Support\Facades\Auth;
 class TransactionController extends Controller
 {
     //
@@ -21,16 +23,26 @@ class TransactionController extends Controller
     }
     public function store(Request $request)
     {
+
         
-        // dd($request);
+       // dd($request->all());
+       //memasukan data ke transaksi
         Transaction::create([
             
-            'customer_name' => $request->customer_name,
-            
-            'total' => $request->total,
+            'product_name' => $request->product_name,
+            'price' => $request->price,
+            'qty' => $request->qty,
+            'subtotal' => $request->subtotal,
+            'users_id' => Auth::user()->id,
             
         ]);
 
+        //menghapus data yang sudah terkirim
+        //cari id yang sudah dibayar 
+        //kemudian dihapus
+        //$transaction=Transaction::where('cart_id',$request["cart_id"])->first();
+
+        //pindah ke form transaksi
         return redirect('/dashboard/transaction');
 }
 
@@ -44,8 +56,8 @@ class TransactionController extends Controller
     public function update(Request $request, $id)
         {
             $validated = $request->validate([
-                'customer_name' => 'required',
-                'total' => 'required',
+                'product_name' => 'required',
+                'subtotal' => 'required',
             ]);
             Transaction::find($id)->update($validated);
             return redirect('transaction');

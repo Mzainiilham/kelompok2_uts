@@ -11,10 +11,12 @@ class Transaction extends Model
     use HasFactory;
    
     protected $fillable = [
-        'customer_name',
-        'total',
-        'user_id',
-       
+        'product_name',
+        'price',
+        'users_id',
+        'qty',
+        'subtotal',
+        
     ];
     public function transaction_detail()
     {
