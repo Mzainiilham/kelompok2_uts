@@ -20,8 +20,8 @@
                             <p class="card-text text-muted my-1"> Kuantitas Produk : {{ $cart->qty }}</p>
                             <p class="card-text text-muted my-1"> Subtotal Produk : {{ $cart->subtotal }}</p>
                         </div>
-                        
-                        <input type="hidden" name="product name" value="{{App\Models\Product::find($cart['product_id'])->name}}">
+                        <input type="hidden" name="product_id" value="{{App\Models\Product::find($cart['product_id'])->id}}">
+                        <input type="hidden" name="product_name" value="{{App\Models\Product::find($cart['product_id'])->name}}">
                         <input type="hidden" name="price" value="{{App\Models\Product::find($cart['product_id'])->price}}">
                         <input type="hidden" name="qty" value="{{$cart->qty}}">
                         <input type="hidden" name="subtotal" value="{{$cart->subtotal}}">

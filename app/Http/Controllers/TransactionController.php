@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use App\Models\User;
-use App\Http\Controllers\Cart;
+use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 class TransactionController extends Controller
 {
@@ -40,7 +40,8 @@ class TransactionController extends Controller
         //menghapus data yang sudah terkirim
         //cari id yang sudah dibayar 
         //kemudian dihapus
-        //$transaction=Transaction::where('cart_id',$request["cart_id"])->first();
+        $cart = Cart::where('product_id',$request->product_id)->first();
+        $cart->delete();
 
         //pindah ke form transaksi
         return redirect('/dashboard/transaction');
